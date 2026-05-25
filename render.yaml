@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: CisseSolution_bot
+    runtime: dotnet
+    buildCommand: dotnet build -c Release
+    startCommand: dotnet run --no-build -c Release
+    envVars:
+      - key: TelegramBotToken
+        sync: false
+      - key: DB_CONNECTION_STRING
+        sync: false
+      - key: AdminBotToken
+        sync: false
+      - key: AdminChatId
+        sync: false
+    plan: free
